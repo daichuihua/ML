@@ -92,7 +92,7 @@ model = tf.keras.models.Sequential([
 
 model.compile(optimizer=RMSprop(lr=0.001),loss='binary_crossentropy',metrics=['acc'])
 
-# æ•°æ®é¢„å¤„ç†
+# Êý¾ÝÔ¤´¦Àí
 TRAINING_DIR = 'D:\\python project\\tensorflow cat and dog\\cats-v-dogs\\training'
 train_datagen = ImageDataGenerator(rescale=1.0/255.)
 train_generator = train_datagen.flow_from_directory(TRAINING_DIR,batch_size=100,class_mode='binary',target_size=(150,150))
@@ -125,7 +125,7 @@ plt.plot(epochs,val_loss,'b',"Validation Loss")
 plt.figure()
 plt.show()
 
-# ä½¿ç”¨æ¨¡åž‹
+# Ê¹ÓÃÄ£ÐÍ
 # import numpy as np
 # from google.colab import files
 # from tensorflow.keras.preprocessing import image
@@ -134,14 +134,18 @@ plt.show()
 #
 # for fn in uploaded.key():
 # 	path = '/content/' + fn
-# 	img = img.load_img(path,target_size=(150,150)) #åˆ—è¡¨
-# 	x = image.img_to_array(img) #æ•°ç»„
-# 	x = np.expand_dim(x,axis=0) #å‘é‡
+# 	img = img.load_img(path,target_size=(150,150)) #ÁÐ±í
+# 	x = image.img_to_array(img) #Êý×é
+# 	x = np.expand_dim(x,axis=0) #ÏòÁ¿
 #
-# 	images = np.vstack([x]) #3ä¸ªé€šé“è¿žèµ·æ¥ï¼Œå½¢æˆä¸€ä¸ªé•¿å‘é‡
+# 	images = np.vstack([x]) #3¸öÍ¨µÀÁ¬ÆðÀ´£¬ÐÎ³ÉÒ»¸ö³¤ÏòÁ¿
 # 	classes = model.predict(images,batch_size=10)
 # 	print(classes[0])
 # 	if classes[0] >0.5:
 # 		print(fn + "is a dog")
 # 	else:
 # 		print(fn + "is a cat")
+
+
+
+# go
