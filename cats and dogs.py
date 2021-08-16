@@ -1,3 +1,5 @@
+# https://www.microsoft.com/en-us/download/confirmation.aspx?id=54765
+# down log cats and dogs pictures
 import os
 import zipfile
 import random
@@ -92,7 +94,7 @@ model = tf.keras.models.Sequential([
 
 model.compile(optimizer=RMSprop(lr=0.001),loss='binary_crossentropy',metrics=['acc'])
 
-# Êý¾ÝÔ¤´¦Àí
+# ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½
 TRAINING_DIR = 'D:\\python project\\tensorflow cat and dog\\cats-v-dogs\\training'
 train_datagen = ImageDataGenerator(rescale=1.0/255.)
 train_generator = train_datagen.flow_from_directory(TRAINING_DIR,batch_size=100,class_mode='binary',target_size=(150,150))
@@ -125,7 +127,7 @@ plt.plot(epochs,val_loss,'b',"Validation Loss")
 plt.figure()
 plt.show()
 
-# Ê¹ÓÃÄ£ÐÍ
+# Ê¹ï¿½ï¿½Ä£ï¿½ï¿½
 # import numpy as np
 # from google.colab import files
 # from tensorflow.keras.preprocessing import image
@@ -134,11 +136,11 @@ plt.show()
 #
 # for fn in uploaded.key():
 # 	path = '/content/' + fn
-# 	img = img.load_img(path,target_size=(150,150)) #ÁÐ±í
-# 	x = image.img_to_array(img) #Êý×é
-# 	x = np.expand_dim(x,axis=0) #ÏòÁ¿
+# 	img = img.load_img(path,target_size=(150,150)) #ï¿½Ð±ï¿½
+# 	x = image.img_to_array(img) #ï¿½ï¿½ï¿½ï¿½
+# 	x = np.expand_dim(x,axis=0) #ï¿½ï¿½ï¿½ï¿½
 #
-# 	images = np.vstack([x]) #3¸öÍ¨µÀÁ¬ÆðÀ´£¬ÐÎ³ÉÒ»¸ö³¤ÏòÁ¿
+# 	images = np.vstack([x]) #3ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î³ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 # 	classes = model.predict(images,batch_size=10)
 # 	print(classes[0])
 # 	if classes[0] >0.5:

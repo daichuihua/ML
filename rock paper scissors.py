@@ -1,3 +1,5 @@
+# https://storage.googleapis.com/laurencemoroney-blog.appspot.com/rps.zip
+# https://storage.googleapis.com/laurencemoroney-blog.appspot.com/rps-test-set.zip
 import os
 import tensorflow as tf
 
