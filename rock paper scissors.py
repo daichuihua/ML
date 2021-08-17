@@ -1,11 +1,12 @@
 # https://storage.googleapis.com/laurencemoroney-blog.appspot.com/rps.zip
 # https://storage.googleapis.com/laurencemoroney-blog.appspot.com/rps-test-set.zip
+
 import os
 import tensorflow as tf
 
-rock_dir = os.path.join('D:\\python project\\tensorflow rock_paper_scissors\\rps\\rock')
-paper_dir = os.path.join('D:\\python project\\tensorflow rock_paper_scissors\\rps\\paper')
-scissors_dir = os.path.join('D:\\python project\\tensorflow rock_paper_scissors\\rps\\scissors')
+rock_dir = os.path.join('D:\\ML\\rps\\rps\\rock')
+paper_dir = os.path.join('D:\\ML\\rps\\rps\\paper')
+scissors_dir = os.path.join('D:\\ML\\rps\\rps\\scissors')
 
 print('total training rock images:',len(os.listdir(rock_dir)))
 print('total training paper images:',len(os.listdir(paper_dir)))
@@ -45,7 +46,7 @@ from keras_preprocessing.image import ImageDataGenerator
 
 
 #数据预处理
-TRAINING_DIR = "D:\\python project\\tensorflow rock_paper_scissors\\rps"
+TRAINING_DIR = "D:\\ML\\rps"
 training_datagen = ImageDataGenerator(
 		rescale = 1./255,
 		rotation_range =40,
@@ -56,7 +57,7 @@ training_datagen = ImageDataGenerator(
 		horizontal_flip=True,
 		fill_mode='nearest')
 
-VALIDATION_DIR = "D:\\python project\\tensorflow rock_paper_scissors\\rps-test-set"
+VALIDATION_DIR = "D:\\ML\\rps-test-set"
 validation_datagen = ImageDataGenerator(rescale = 1./255)
 
 train_generator = training_datagen.flow_from_directory(
@@ -97,10 +98,10 @@ history = model.fit_generator(train_generator,
 							  validation_data=validation_generator,
 							  verbose=1)
 
-model.save("D:\\python project\\tensorflow rock_paper_scissors\\rps.h5")
+model.save("D:\\ML\\rps.h5")
 
 import tensorflow as tf
-new_model = tf.keras.models.load_model('D:\\python project\\tensorflow rock_paper_scissors\\rps.h5')
+new_model = tf.keras.models.load_model('D:\\ML\\rps.h5')
 # new_model.summary()
 
 acc = history.history['accuracy']
@@ -119,6 +120,7 @@ with summary_writer.as_default():
 		tf.summary.scalar('loss',loss[n],step=n)
 		tf.summary.scalar('acc', acc[n], step=n)
 	# tf.summary.image("trainpicture",train_generator[1],step=0)
+# 查看模型
 # tensorboard --logdir logs
 
 
@@ -149,7 +151,7 @@ import numpy as np
 # from google.colab import files
 from tensorflow.keras.preprocessing import image
 
-path ='D:\\python project\\tensorflow rock_paper_scissors\\rps-try-set\\1.jpg'
+path ='D:\\ML\\rps-try-set\\1.jpg'
 img = image.load_img(path,target_size=(150,150)) #列表
 x = image.img_to_array(img) #数组
 x = np.expand_dims(x,axis=0) #向量
@@ -171,7 +173,7 @@ print(classes)
 # 	print(fn)
 # 	print(classes)
 
-
+# 遍历文件夹中所有图片文件
 # def is_image_file(filename):
 #     return any(filename.endswith(extension) for extension in ['.png', '.jpg', '.jpeg', '.PNG', '.JPG', '.JPEG'])
 #
